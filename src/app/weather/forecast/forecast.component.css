@@ -1,0 +1,30 @@
+:host {
+  position: fixed;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+mat-list {
+  border: 1px solid #eee;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 1px 1px 7px 0 #aaa;
+}
+mat-list-item {
+  border-bottom: 1px solid #ddd;
+}
+mat-list-item:last-of-type {
+  border-bottom: 0;
+}
+.temp,
+.day {
+  text-align: center;
+}
+.temp {
+  font-weight: bold;
+}
+.day {
+  font-style: italic;
+  color: #555;
+}

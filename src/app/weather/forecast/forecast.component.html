@@ -1,0 +1,7 @@
+<mat-list>
+  <mat-list-item *ngFor="let item of forecastData">
+    <div class="temp" mat-line>{{ +item.temp | number: "1.0-0" }}&deg;C</div>
+    <div class="day" mat-line>{{ item.date | date: "E" }}</div>
+  </mat-list-item>
+  <!-- <mat-divider></mat-divider> -->
+</mat-list>
