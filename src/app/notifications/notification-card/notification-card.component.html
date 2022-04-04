@@ -1,0 +1,22 @@
+<mat-card
+  class="notification-card"
+  mat-ripple
+  [matRippleCentered]="true"
+  [ngClass]="message.type"
+>
+  <mat-card-subtitle>{{ message.type | uppercase }}</mat-card-subtitle>
+  <mat-card-content>
+    <p *ngIf="message.text">
+      {{ message.text | slice: 0:45 }}
+      {{ message.text.length > 45 ? "..." : "" }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-icon-button (click)="clearMessage(message.id)">
+      <mat-icon aria-hidden="false" aria-label="Close">close</mat-icon>
+    </button>
+  </mat-card-actions>
+  <mat-card-footer>
+    <mat-progress-bar mode="determinate" [value]="bar_value"></mat-progress-bar>
+  </mat-card-footer>
+</mat-card>

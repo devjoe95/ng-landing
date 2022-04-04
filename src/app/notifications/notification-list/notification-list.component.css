@@ -1,0 +1,12 @@
+:host {
+  width: 350px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+.notification-card {
+  margin-bottom: 10px;
+}
+.notification-card:last-of-type {
+  margin-bottom: 0;
+}

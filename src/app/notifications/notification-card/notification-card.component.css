@@ -1,0 +1,22 @@
+.notification-card {
+  cursor: pointer;
+  box-shadow: 1px 1px 7px 0 #aaa;
+  border-radius: 0;
+  margin-bottom: 5px;
+  transition: all 0.5s ease-in-out;
+}
+
+.success mat-card-subtitle {
+  color: #28a745;
+}
+
+.error mat-card-subtitle {
+  color: #dc3545;
+}
+mat-card-actions {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  margin: 0;
+  padding: 0;
+}

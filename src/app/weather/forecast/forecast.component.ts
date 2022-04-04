@@ -6,13 +6,11 @@ import { WeatherService } from '../weather.service';
   templateUrl: './forecast.component.html',
   styleUrls: ['./forecast.component.css'],
 })
-export class ForecastComponent implements OnInit {
+export class ForecastComponent {
   forecastData: Array<{ date: Date; temp: String }> = [];
   constructor(weatherService: WeatherService) {
     weatherService.getForecast().subscribe((result) => {
       this.forecastData = result;
     });
   }
-
-  ngOnInit(): void {}
 }

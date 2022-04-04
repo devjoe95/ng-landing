@@ -1,0 +1,6 @@
+<app-notification-card
+  *ngFor="let message of messages$ | async"
+  [message]="message"
+  (clearAction)="clearMessage($event)"
+>
+</app-notification-card>
