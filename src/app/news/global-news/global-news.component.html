@@ -1,0 +1,40 @@
+<ng-container *ngIf="articles.length === 0; else articlesTemplate">
+  <mat-spinner></mat-spinner>
+</ng-container>
+
+<ng-template #articlesTemplate>
+  <mat-accordion>
+    <mat-expansion-panel
+      *ngFor="let article of articles | slice: 0:5"
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ article.title | slice: 0:40 }} ...</mat-panel-title
+        >
+      </mat-expansion-panel-header>
+      <p>{{ article.description | slice: 0:50 }} ...</p>
+      <a [href]="article.url">Read More</a>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-accordion>
+    <mat-expansion-panel
+      *ngFor="let article of articles | slice: 5:10"
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ article.title | slice: 0:40 }} ...</mat-panel-title
+        >
+      </mat-expansion-panel-header>
+      <p>{{ article.description | slice: 0:50 }} ...</p>
+      <a [href]="article.url">Read More</a>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <app-paginator
+    [numOfArticles]="numOfArticles"
+    (navigate)="navigate($event)"
+  ></app-paginator>
+</ng-template>

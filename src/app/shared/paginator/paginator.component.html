@@ -1,0 +1,7 @@
+<mat-paginator
+  [length]="numOfArticles"
+  [pageSize]="10"
+  aria-label="Select page"
+  (page)="pageEvent = getServerData($event)"
+>
+</mat-paginator>
