@@ -52,6 +52,11 @@ export class WeatherService {
       switchMap((params) =>
         this.http.get<OpenWeatherResponse>(this.url, { params })
       ),
+      tap((value) => {
+        this.notificationsService.addSuccessMessage(
+          `Welcome from ${value.city.name}, ${value.city.country}`
+        );
+      }),
       pluck('list'),
       mergeMap((value) => of(...value)),
       filter((_, index) => index % 8 === 0),
